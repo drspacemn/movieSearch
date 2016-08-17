@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>Movie Search</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js" charset="utf-8"></script>
+		<script src="./js/app.js" charset="utf-8"></script>
+		<script src="./js/controllers.js" type='text/javascript'></script>
+		<script src="./js/directives.js" type='text/javascript'></script>
+		<script src="./js/filters.js" type='text/javascript'></script>
+		<script src="./js/services.js" type='text/javascript'></script>
+	</head>
+	<body ng-controller='mainController'>
+		<header class="container">
+			<div class="item">
+				<h4>Angular OMDb API Search</h4>
+				<h5>Enter a movie by title</h5>
+				<div class="form">
+					<input type="text" name="search" ng-model='searchInput' placeholder="movie title i.e.(Pee Wee's Big Adventure)">
+					<button ng-click='searchMovies()' class="btn btn-default"name="submit" value="Click Me">Click Me
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+				</div>
+			</div>
+		</header>
+		<hr>
+
+		<div ng-view></div>
+
+		<main ng-show='main'>
+			<div class="container2">
+				<div class="item2">
+					<div ng-repeat="movie in view.data1">
+						<div class="insides">
+							<h5><a ng-href='/movie/{{movie.imdbID}}'>{{movie.Title}}</a></h5>
+							<h6>year: {{movie.Year}}</h6>
+						</div>
+					</div>
+				</div>
+				<div class="item2">
+					<div ng-repeat="movie in view.data2">
+						<div class="insides">
+							<h5><a ng-href='/movie/{{movie.imdbID}}'>{{movie.Title}}</a></h5>
+							<h6>year: {{movie.Year}}</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<base href='/'>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+	</body>
+</html>

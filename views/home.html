@@ -1,0 +1,14 @@
+<div class="insides">
+	<div class="left">
+		<img ng-src="{{view.data.Poster}}" alt="" />
+	</div>
+	<div class="right">
+		<h5>{{view.data.Title}}</h5>
+		<h6>{{view.data.Year}}</h6>
+		<p>
+			{{view.data.Plot}}
+		</p>
+		<h6>Director: {{view.data.Director}}</h6>
+		<input type="button" class="btn btn-default" ng-click="view.back()" name="name" value="< back">
+	</div>
+</div>
